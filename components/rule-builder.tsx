@@ -12,14 +12,16 @@ import { Switch } from "@/components/ui/switch"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Trash2, Edit3, Save, X, Lightbulb, Download, Wand2 } from "lucide-react"
-import type {  WorkerData, TaskData, BusinessRule } from "@/types/data"
+import type {  WorkerData, TaskData, BusinessRule, ClientData } from "@/types/data"
 
 interface RuleBuilderProps {
   workersData: WorkerData[]
   tasksData: TaskData[]
+  clientsData: ClientData[]
+
 }
 
-export function RuleBuilder({ workersData, tasksData }: RuleBuilderProps) {
+export function RuleBuilder({ workersData, tasksData,  }: RuleBuilderProps) {
   const [rules, setRules] = useState<BusinessRule[]>([])
   const [activeTab, setActiveTab] = useState<"create" | "manage" | "natural">("create")
   const [editingRule, setEditingRule] = useState<BusinessRule | null>(null)

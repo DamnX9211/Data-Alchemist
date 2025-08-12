@@ -117,7 +117,11 @@ export default function DataAlchemist() {
               <DataGrid data={tasksData} type="tasks" onDataChange={(data) => setTasksData(data as TaskData[])} />
             )}
             {activeTab === "rules" && (
-              <RuleBuilder clientsData={clientsData} workersData={workersData} tasksData={tasksData} />
+              <RuleBuilder
+                clientsData={clientsData}
+                workersData={workersData}
+                tasksData={tasksData}
+              />
             )}
             {activeTab === "export" && (
               <ExportControls clientsData={clientsData} workersData={workersData} tasksData={tasksData} />
