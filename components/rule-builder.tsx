@@ -207,7 +207,7 @@ export function RuleBuilder({ workersData, tasksData,  }: RuleBuilderProps) {
             <Label htmlFor="rule-type">Rule Type</Label>
             <Select
               value={formData.type}
-              onValueChange={(value) => setFormData({ ...formData, type: value as BusinessRule["type"] })}
+              onValueChange={(value: string) => setFormData({ ...formData, type: value as BusinessRule["type"] })}
             >
               <SelectTrigger>
                 <SelectValue placeholder="Select rule type" />
@@ -242,7 +242,7 @@ export function RuleBuilder({ workersData, tasksData,  }: RuleBuilderProps) {
           <div>
             <Label>Co-Run Tasks</Label>
             <Select
-              onValueChange={(taskId) => {
+              onValueChange={(taskId: any) => {
                 const currentTasks = formData.parameters?.tasks || []
                 if (!currentTasks.includes(taskId)) {
                   setFormData({
@@ -289,7 +289,7 @@ export function RuleBuilder({ workersData, tasksData,  }: RuleBuilderProps) {
               <Label>Worker Group</Label>
               <Select
                 value={formData.parameters?.workerGroup || ""}
-                onValueChange={(value) =>
+                onValueChange={(value: any) =>
                   setFormData({
                     ...formData,
                     parameters: { ...formData.parameters, workerGroup: value },
@@ -331,7 +331,7 @@ export function RuleBuilder({ workersData, tasksData,  }: RuleBuilderProps) {
               <Label>Task</Label>
               <Select
                 value={formData.parameters?.taskId || ""}
-                onValueChange={(value) =>
+                onValueChange={(value: any) =>
                   setFormData({
                     ...formData,
                     parameters: { ...formData.parameters, taskId: value },
@@ -373,7 +373,7 @@ export function RuleBuilder({ workersData, tasksData,  }: RuleBuilderProps) {
         <div className="flex items-center space-x-2">
           <Switch
             checked={formData.active ?? true}
-            onCheckedChange={(checked) => setFormData({ ...formData, active: checked })}
+            onCheckedChange={(checked: any) => setFormData({ ...formData, active: checked })}
           />
           <Label>Rule is active</Label>
         </div>
@@ -410,7 +410,7 @@ export function RuleBuilder({ workersData, tasksData,  }: RuleBuilderProps) {
         </CardHeader>
       </Card>
 
-      <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as typeof activeTab)}>
+      <Tabs value={activeTab} onValueChange={(value: string) => setActiveTab(value as typeof activeTab)}>
         <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="create">Create Rules</TabsTrigger>
           <TabsTrigger value="manage">Manage Rules ({rules.length})</TabsTrigger>

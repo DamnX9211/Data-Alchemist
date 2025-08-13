@@ -203,7 +203,7 @@ export function ExportControls({ clientsData, workersData, tasksData }: ExportCo
                   </div>
                   <Slider
                     value={[value]}
-                    onValueChange={(newValue) => setPriorityWeights((prev) => ({ ...prev, [key]: newValue[0] }))}
+                    onValueChange={(newValue: any[]) => setPriorityWeights((prev) => ({ ...prev, [key]: newValue[0] }))}
                     max={100}
                     step={5}
                     className="w-full"
@@ -277,7 +277,7 @@ export function ExportControls({ clientsData, workersData, tasksData }: ExportCo
                 <Checkbox
                   id="includeValidation"
                   checked={exportOptions.includeValidation}
-                  onCheckedChange={(checked) => setExportOptions((prev) => ({ ...prev, includeValidation: !!checked }))}
+                  onCheckedChange={(checked: any) => setExportOptions((prev) => ({ ...prev, includeValidation: !!checked }))}
                 />
                 <Label htmlFor="includeValidation" className="text-sm">
                   Include validation results
@@ -288,7 +288,7 @@ export function ExportControls({ clientsData, workersData, tasksData }: ExportCo
                 <Checkbox
                   id="includeRules"
                   checked={exportOptions.includeRules}
-                  onCheckedChange={(checked) => setExportOptions((prev) => ({ ...prev, includeRules: !!checked }))}
+                  onCheckedChange={(checked: any) => setExportOptions((prev) => ({ ...prev, includeRules: !!checked }))}
                 />
                 <Label htmlFor="includeRules" className="text-sm">
                   Include business rules configuration
@@ -299,7 +299,7 @@ export function ExportControls({ clientsData, workersData, tasksData }: ExportCo
                 <Checkbox
                   id="onlyValid"
                   checked={exportOptions.onlyValid}
-                  onCheckedChange={(checked) => setExportOptions((prev) => ({ ...prev, onlyValid: !!checked }))}
+                  onCheckedChange={(checked: any) => setExportOptions((prev) => ({ ...prev, onlyValid: !!checked }))}
                 />
                 <Label htmlFor="onlyValid" className="text-sm">
                   Export only validated records
